@@ -10,13 +10,13 @@ import {
   View,
 } from 'react-native';
 
-function colorChange (){
-  
-  
-  
+function colorChange() {
+
+
+
 }
 function App(): React.JSX.Element {
-  
+
   const [bgColor, setBgColor] = useState('#ffffff');
   const changeBgColor = () => {
     const hex = "0123456789ABCDEF";
@@ -28,14 +28,14 @@ function App(): React.JSX.Element {
   };
   return (
     <>
-      <TouchableOpacity  style={styles.bgArea}  >
-        <StatusBar backgroundColor={'red'} />
-        <Text style={styles.heading}>
-          Background changer 
-       </Text>
-        <View style={styles.bgArea}>
-        </View>
-      </TouchableOpacity>
+      <StatusBar backgroundColor={bgColor} />
+      <TouchableOpacity style={[styles.bgArea, { backgroundColor: bgColor }]} onPress={changeBgColor}>
+        {/* <TouchableOpacity onPress={changeBgColor}>
+          <View style={styles.heading}>
+            <Text style={styles.heading}>Change Background Color</Text>
+          </View>
+        </TouchableOpacity> */}
+         </TouchableOpacity>
     </>
   );
 }
